@@ -1,7 +1,10 @@
 const express = require("express");
+const connect_db = require("./config/database");
 const dotenv = require("dotenv").config();
 const port = process.env.port || 6000;
 const app = express();
+
+connect_db();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
